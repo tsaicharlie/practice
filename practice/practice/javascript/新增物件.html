@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/a20a61d504.js" crossorigin="anonymous"></script>
+    <style>
+        :root{
+            --deg:0deg;
+        }
+        body{
+            height: 100vh;
+            /* background: radial-gradient(red, orange,yellow,greenyellow,blue,purple  ); */
+            /* animation: party 0.5s linear infinite; */
+            /* animation-play-state:paused; */
+            text-align: center;
+            position: relative;
+            
+        }
+        .classbody{
+            animation: party 0.5s linear infinite;
+        }
+        .classparty{
+            animation: pooparty .5s infinite alternate;
+        }
+        i{
+            font-size: 100px;
+            rotate: calc(--deg+50deg);
+            animation: animate 1s infinite linear alternate;
+            transition: all .1s;
+        }
+        i:hover{
+            scale: 1.4;
+        }
+        button{
+            display: inline-block;
+            width: 150px;
+            color: white;
+            font-size: 30px;
+            font-style: italic;
+            padding: 30px;
+            border-radius: 30px;
+            background-color: #b6620e;
+            margin: 0 auto;
+            margin-top: 200px;
+            transition: all .5s;
+            position: fixed;
+            bottom: 0;
+            left: 30%;
+            transform: translateX(-50%);
+            margin-bottom: 10px;
+            
+            
+        }
+        #delete{
+            left: 50%;
+            background-color: red;
+            
+        }
+        #party{
+            left: 70%;
+        }
+        button:hover{
+            color:#b6620e;
+            background-color:white;
+            box-shadow: 0px 2px 5px 1px ;
+        }
+        @keyframes animate {
+            0%, 100%{
+                transform: translateY(0px);
+            }
+            50%{
+                transform: translateY(20px);
+            }
+        
+            
+        }
+        @keyframes party {
+            0%{
+
+            }
+            10%{
+                background: radial-gradient(red, orange,yellow,greenyellow,blue,purple );
+            }
+            20%{
+                background: radial-gradient(orange,yellow,greenyellow,blue,purple,red );
+
+            }
+            40%{
+                background: radial-gradient(yellow,greenyellow,blue,purple,red, orange,);
+            }
+            60%{
+                background: radial-gradient(greenyellow,blue,purple,red, orange,yellow );
+            }
+            80%{
+                background: radial-gradient(blue,purple,red, orange,yellow,greenyellow, );
+            }
+            100%{
+                background: radial-gradient(purple, blue,greenyellow,yellow,orange,red );
+            }
+        }
+        @keyframes pooparty{
+            0%{
+                scale: 1;
+            }
+            100%{
+                scale: 1.5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="div">
+        <!-- <i id="poo" class="fa-sharp fa-solid fa-poo"></i> -->
+        </div>
+    </main>
+
+
+    <br>
+
+    <button id="poobtn">poopoo</button>
+    <button id="delete">delete</button>
+    <button id="party">party</button>
+    <!-- <input type="checkbox" name="" id="party" value="">party -->
+</body>
+<script>
+    var poobtn=document.getElementById("poobtn");
+    var poo=document.getElementById("poo");
+    var div=document.getElementById("div");
+    var i=document.getElementsByTagName("i");
+    
+    function changebg(){
+        var bgcolor="";
+        for(var j=0;j<6;j++){
+            bgcolor+=""+Math.round(Math.random()*9);
+        }
+        console.log(bgcolor);
+        var i=document.createElement("i");
+        i.className="fa-sharp fa-solid fa-poo";
+        i.style.color="#"+bgcolor;
+        div.appendChild(i);
+    }
+    
+    poobtn.onclick=changebg;
+
+    var deletebtn=document.getElementById("delete");
+    var main=document.getElementsByTagName("main")[0];
+    deletebtn.onclick=function(){
+        // main.removeChild("div");
+        div.removeChild(div.lastChild);
+        
+    }
+    var counter=0;
+    var party=document.getElementById("party");
+
+    party.onclick=function(){
+        console.log("aaa");
+        counter+=1;
+        var body=document.getElementsByTagName("body")[0];
+        
+        if(counter%2==1){
+          
+          body.classList.add("classbody")  ;
+          for(var a=0 ;a<i.length;a++)
+            
+            i[a].classList.add("classparty")
+
+
+        }
+        else{
+          body.classList.remove("classbody");
+          for(var a=0 ;a<i.length;a++){
+            i[a].classList.remove("classparty");
+
+          }
+            
+            
+
+        }
+          
+        }
+
+
+    
+</script>
+</html>

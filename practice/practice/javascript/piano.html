@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>piano</title>
+    <script src="https://kit.fontawesome.com/a20a61d504.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: blueviolet;
+            display: flex;
+            justify-content: center;
+            /* height: 100vh;a */
+            padding-top: 20%;
+            overflow: hidden;
+            align-items: center;
+        }
+        .piano{
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            width: 900px;
+            height: 500px;
+            background-color: #000;
+            border-radius: 20px;
+            padding-top: 50px;
+            padding-left:50px ;
+            padding-right: 50px;
+            box-shadow: 2px 2px 10px 5px rgb(66, 60, 60);
+        }
+        
+        
+        .keyboard{
+            border: 1px solid black;
+            font-size: 40px;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            
+            box-shadow: 2px 2px 5px 1px #555;
+            user-select: none;
+            
+        }
+        
+        .white{
+            width: 100px;
+            height: 400px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        .white-active{
+            background-color: #ccc;
+        }
+        .black{
+            width: 60px;
+            height: 250px;
+            background-color: #111;
+            margin-left: -30px;
+            margin-right: -30px;
+            z-index: 2;
+            color:#fff;
+            border-radius: 2px;
+        }
+        .black-active{
+            background-color: #999;
+        }
+
+        i{
+            color: #555;
+            font-size: 60px;
+            /* z-index: 2; */
+            position: absolute;
+            left: 0;
+            bottom: -10%;
+            animation: animate 5s  ;
+
+        }
+        #clap{
+            animation: none;
+            color: #fff;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 100px;
+            transition:  .5s;
+            z-index: 5;
+
+        }
+        
+        #clap:hover{
+            color: #ccc;
+        }
+        
+        .animate2{
+            animation: animate2 8s infinite;
+        }
+        @keyframes animate {
+            0%{
+                top: 120%;
+                transform: translateX(-100%);
+                opacity: 0.5;
+            }
+            25%{
+                transform: translateX(100%);
+            }
+            50%{
+                transform: translateX(-100%);
+            }
+            75%{
+                transform: translateX(-100%);
+                opacity: 1;
+            }
+            100%{
+                top: -20%;
+                transform: translateX(100%);
+                opacity: 0;
+                
+            }
+        }
+        img{
+            position: absolute;
+            z-index: 5;
+            width: 500px;
+            top: 20%;
+        }
+        
+
+    </style>
+</head>
+<body>
+        <!-- <div id="gifwrapper"> -->
+
+        </div>
+        <i id="clap" class="fa-solid fa-hands-clapping"></i>
+    
+        <div class="piano">
+            <div class="white keyboard" data-key="a">a</div>
+            <div class="black keyboard" data-key="w">w</div>
+            <div class="white keyboard" data-key="s">s</div>
+            <div class="black keyboard" data-key="e">e</div>
+            <div class="white keyboard" data-key="d">d</div>
+            <div class="white keyboard" data-key="f">f</div>
+            <div class="black keyboard" data-key="t">t</div>
+            <div class="white keyboard" data-key="g">g</div>
+            <div class="black keyboard" data-key="y">y</div>
+            <div class="white keyboard" data-key="h">h</div>
+            <div class="black keyboard" data-key="u">u</div>
+            <div class="white keyboard" data-key="j">j</div>
+            <div class="white keyboard" data-key="k">k</div>
+            <div class="black keyboard" data-key="o">o</div>
+            <div class="white keyboard" data-key="l">l</div>
+            <div class="black keyboard" data-key="p">p</div>
+            <div class="white keyboard" data-key=":">:</div>
+        </div >
+        <!-- <img src="../img/1f389.gif" alt=""> -->
+
+        <!-- <i class="fa-brands fa-itunes-note "></i>
+        <i class="fa-brands fa-itunes-note " style="left: 10%; animation-delay: .5s;"></i>   
+        <i class="fa-brands fa-itunes-note"style="left: 20%;"></i>   
+        <i class="fa-brands fa-itunes-note"style="left: 30%; animation-delay: 3s;"></i>   
+        <i class="fa-brands fa-itunes-note"style="left: 40%; animation-delay: 1s;"></i>   
+        <i class="fa-brands fa-itunes-note"style="left: 50%; animation-delay: .2s;"></i>   
+        <i class="fa-brands fa-itunes-note "style="left: 60%;"></i> 
+        <i class="fa-brands fa-itunes-note "style="left: 70%;"></i>
+        <i class="fa-brands fa-itunes-note "style="left: 80%;animation-delay: .2s;"></i>
+        <i class="fa-brands fa-itunes-note "style="left: 90%;animation-delay: 4s;"></i>                 -->
+
+        
+        <audio src="../music2/a.mp3"></audio>
+        <audio src="../music2/w.mp3"></audio>
+        <audio src="../music2/s.mp3"></audio>
+        <audio src="../music2/e.mp3"></audio>
+        <audio src="../music2/d.mp3"></audio>
+        <audio src="../music2/f.mp3"></audio>
+        <audio src="../music2/t.mp3"></audio>
+        <audio src="../music2/g.mp3"></audio>
+        <audio src="../music2/y.mp3"></audio>
+        <audio src="../music2/h.mp3"></audio>
+        <audio src="../music2/u.mp3"></audio>
+        <audio src="../music2/j.mp3"></audio>
+        <audio src="../music2/k.mp3"></audio>
+        <audio src="../music2/o.mp3"></audio>
+        <audio src="../music2/l.mp3"></audio>
+        <audio src="../music2/p.mp3"></audio>
+        <audio src="../music2/mi.mp3"></audio>
+        <audio src="../music2/yisell_sound_2014032815173050582_88366.mp3"></audio>
+        
+        
+        <script>
+            // var key=[a,w,s,e,d,f,t,g,y,h,u,j,k];
+            var counter=0;
+            var gifwrapper=document.getElementById("gifwrapper");
+            var arr=[65,87,83,69,68,70,84,71,89,72,85,74,75]
+            var key=document.getElementsByClassName("keyboard"); 
+            var audios=document.getElementsByTagName("audio");
+            var clapbtn=document.getElementById("clap");
+            
+
+            clapbtn.onclick=function(){
+                counter+=1;
+                console.log(counter)
+                var img=document.createElement("img");
+                gifwrapper.appendChild(img);
+                img.src="../img/1f389.gif";
+
+                audios[17].load();
+                audios[17].play();
+                if(counter%2==0){
+                    
+                    audios[17].pause();
+                    gifwrapper.removeChild(img);
+                }
+
+            }
+            document.onkeydown=function(e){
+                console.log(e.keyCode);
+
+                
+            if(e.keyCode==65){
+                key[0].classList.add('white-active');
+                audios[0].load();
+                audios[0].play();
+                document.body.style.backgroundColor="red";
+                var i=document.createElement("i");
+                document.body.appendChild(i);
+                i.className="fa-brands fa-itunes-note";
+                
+            }
+            
+            if(e.keyCode==87){
+                key[1].classList.add('black-active');
+                audios[1].load();
+                audios[1].play();
+                document.body.style.backgroundColor="orange";
+                var i=document.createElement("i");
+                document.body.appendChild(i);
+                i.className="fa-brands fa-itunes-note";
+                i.style.left="10%";
+            }
+            if(e.keyCode==83){
+                key[2].classList.add('white-active');
+                audios[2].load();
+                audios[2].play();
+                document.body.style.backgroundColor="yellow";
+                var i=document.createElement("i");
+                document.body.appendChild(i);
+                i.className="fa-brands fa-itunes-note";
+                i.style.left="15%";
+            }
+            if(e.keyCode==69){
+                key[3].classList.add('black-active');
+                audios[3].load();
+                audios[3].play();
+                document.body.style.backgroundColor="yellowGreen";
+                var i=document.createElement("i");
+                document.body.appendChild(i);
+                i.className="fa-brands fa-itunes-note";
+                i.style.left="20%";
+            }
+            if(e.keyCode==68){
+                key[4].classList.add('white-active');
+                audios[4].load();
+                audios[4].play();
+                document.body.style.backgroundColor=" skyblue";
+                var i=document.createElement("i");
+                document.body.appendChild(i);
+                i.className="fa-brands fa-itunes-note";
+                i.style.left="25%";
+            }
+            if(e.keyCode==70){
+                key[5].classList.add('white-active');
+                audios[5].load();
+                audios[5].play();
+                document.body.style.backgroundColor="rgb(189, 79, 189)";
+                var i=document.createElement("i");
+                document.body.appendChild(i);
+                i.className="fa-brands fa-itunes-note";
+                i.style.left="30%";
+            }
+            if(e.keyCode==84){
+                key[6].classList.add('black-active');
+                audios[6].load();
+                audios[6].play();
+                document.body.style.backgroundColor="pink";
+                var i=document.createElement("i");
+                document.body.appendChild(i);
+                i.className="fa-brands fa-itunes-note";
+                i.style.left="35%";
+            }
+            if(e.keyCode==71){
+                key[7].classList.add('white-active');
+                audios[7].load();
+                audios[7].play();
+                document.body.style.backgroundColor="#bfa";
+                var i=document.createElement("i");
+                document.body.appendChild(i);
+                i.className="fa-brands fa-itunes-note";
+                i.style.left="40%";
+            }
+            if(e.keyCode==89){
+                key[8].classList.add('black-active');
+                audios[8].load();
+                audios[8].play();
+                document.body.style.backgroundColor="#fab";
+                var i=document.createElement("i");
+                document.body.appendChild(i);
+                i.className="fa-brands fa-itunes-note";
+                i.style.left="50%";
+            }
+            if(e.keyCode==72){
+                key[9].classList.add('white-active');
+                audios[9].load();
+                audios[9].play();
+                document.body.style.backgroundColor="#abf";
+                var i=document.createElement("i");
+                document.body.appendChild(i);
+                i.className="fa-brands fa-itunes-note";
+                i.style.left="60%";
+            }
+            if(e.keyCode==85){
+                key[10].classList.add('black-active');
+                audios[10].load();
+                audios[10].play();
+                document.body.style.backgroundColor="#ca0";
+                var i=document.createElement("i");
+                document.body.appendChild(i);
+                i.className="fa-brands fa-itunes-note";
+                i.style.left="75%";
+            }
+            if(e.keyCode==74){
+                key[11].classList.add('white-active');
+                audios[11].load();
+                audios[11].play();
+                document.body.style.backgroundColor="#b4a";
+                var i=document.createElement("i");
+                document.body.appendChild(i);
+                i.className="fa-brands fa-itunes-note";
+                i.style.left="80%";
+            }
+            if(e.keyCode==75){
+                key[12].classList.add('black-active');
+                audios[12].load();
+                audios[12].play();
+                document.body.style.backgroundColor="#5fa";
+                var i=document.createElement("i");
+                document.body.appendChild(i);
+                i.className="fa-brands fa-itunes-note";
+                i.style.left="40%";
+            }
+            if(e.keyCode==79){
+                key[13].classList.add('black-active');
+                audios[13].load();
+                audios[13].play();
+                document.body.style.backgroundColor="#2d7";
+                var i=document.createElement("i");
+                document.body.appendChild(i);
+                i.className="fa-brands fa-itunes-note";
+                i.style.left="55%";
+            }
+            if(e.keyCode==76){
+                key[14].classList.add('white-active');
+                audios[14].load();
+                audios[14].play();
+                document.body.style.backgroundColor="#cca";
+                var i=document.createElement("i");
+                document.body.appendChild(i);
+                i.className="fa-brands fa-itunes-note";
+                i.style.left="60%";
+            }
+            if(e.keyCode==80){
+                key[15].classList.add('black-active');
+                audios[15].load();
+                audios[15].play();
+                document.body.style.backgroundColor="#c8a";
+                var i=document.createElement("i");
+                document.body.appendChild(i);
+                i.className="fa-brands fa-itunes-note";
+                i.style.left="70%";
+            }
+            if(e.keyCode==186){
+                key[16].classList.add('white-active');
+                audios[16].load();
+                audios[16].play();
+                document.body.style.backgroundColor="#aac";
+                var i=document.createElement("i");
+                document.body.appendChild(i);
+                i.className="fa-brands fa-itunes-note";
+                i.style.left="80%";
+            }
+
+            document.onkeyup=function(){
+                for(var i=0;i<key.length;i++){
+                    key[i].classList.remove("white-active");
+                    key[i].classList.remove("black-active");
+                    }
+                }
+                
+            }
+
+        </script>
+    
+</body>
+</html>

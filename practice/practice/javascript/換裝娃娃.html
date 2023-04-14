@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <style>
+        body{
+            background-image: url(../img/戀上換裝娃娃/images.jpg);
+            background-size: cover;
+            /* background-position: center; */
+            background-repeat: no-repeat;
+           
+        }
+        div
+      
+        img{
+            position: absolute;
+            
+        }
+        img:nth-child(1){
+            left: 50%;
+            top: 10%;
+            transform: translateX(-50%);
+        }
+        img:nth-child(2){
+            left: 60%;
+            top: 20%;
+        }
+        img:nth-child(3){
+            left: 60%;
+            top: 30%;
+            
+            
+        }
+        img:nth-child(4){
+            left: 58%;
+            top: 45%;
+        }
+        img:nth-child(5){
+            top: 70%;
+            left: 40%;
+            
+        }
+        img:nth-child(6){
+            top: 70%;
+            left: 50%;
+            
+        }
+        img:nth-child(7){
+            top: 70%;
+            left: 60%;
+            
+        }
+        img:nth-child(8){
+            top: 20%;
+            left: 30%;
+            
+        }
+        img:nth-child(9){
+            top: 40%;
+            left: 30%;
+            
+        }
+        img:nth-child(10){
+            top: 60%;
+            left: 30%;
+            
+        }
+    </style>
+</head>
+<body >
+  
+        <div id="chart3">
+            <img id="model" src="../img/戀上換裝娃娃/model.png" alt="">
+            <img id="pants1" src="../img/戀上換裝娃娃/pants1.png" alt="">
+            <img id="pants2" src="../img/戀上換裝娃娃/pants2.png" alt="">
+            <img id="pants3" src="../img/戀上換裝娃娃/pants3.png" alt="">
+            <img id="shoes1" src="../img/戀上換裝娃娃/shoes1.png" alt="">
+            <img id="shoes2" src="../img/戀上換裝娃娃/shoes2.png" alt="">
+            <img id="shoes3" src="../img/戀上換裝娃娃/shoes3.png" alt="">
+            <img id="upper1" src="../img/戀上換裝娃娃/upper1.png" alt="">
+            <img id="upper2" src="../img/戀上換裝娃娃/upper2.png" alt="">
+            <img id="upper3" src="../img/戀上換裝娃娃/upper3.png" alt="">
+        </div>
+
+        <button id="btnSave" class="btn btn-danger" onclick="screenshot()">Download screenshot</button>
+
+
+    <script>
+        var model=document.getElementById("model");
+        var pants1=document.getElementById("pants1");
+        var pants2=document.getElementById("pants2");
+        var pants3=document.getElementById("pants3");
+        var shoes1=document.getElementById("shoes1");
+        var shoes2=document.getElementById("shoes2");
+        var shoes3=document.getElementById("shoes3");
+        var upper1=document.getElementById("upper1");
+        var upper2=document.getElementById("upper2");
+        var upper3=document.getElementById("upper3");
+        var picture=document.getElementById("picture");
+        // function fun(obj){
+        //     obj.onmousedown=function(){
+        //         var ol=e.clientX-upper1.offsetLeft;
+        //     var ot=e.clientY-upper1.offsetTop;
+        //     document.onmousemove=function(e){
+        //         var left=e.clientX-ol;
+        //         var top=e.clientY=ot;
+        //         upper1.style.left=left+"px";
+        //         upper1.style.top=top+"px";
+        //     }
+        //     document.onmouseup=function(){
+        //         document.onmousemove=null;
+        //         document.onmousedown=null;
+        //     }
+        //     }
+            
+            
+        // }
+        // upper1.addEventListener("mousedown",fun);
+
+
+        upper1.onmousedown=function(e){
+            var ol=e.clientX-upper1.offsetLeft;
+            var ot=e.clientY-upper1.offsetTop;
+            document.onmousemove=function(e){
+                var left=e.clientX-ol;
+                var top=e.clientY-ot;
+                upper1.style.left=left+"px";
+                upper1.style.top=top+"px";
+            }
+            document.onmouseup=function(){
+                document.onmousemove=null;
+                document.onmousedown=null;
+            }
+        }
+        upper2.onmousedown=function(e){
+            var ol=e.clientX-upper2.offsetLeft;
+            var ot=e.clientY-upper2.offsetTop;
+            document.onmousemove=function(e){
+                var left=e.clientX-ol;
+                var top=e.clientY-ot;
+                upper2.style.left=left+"px";
+                upper2.style.top=top+"px";
+            }
+            document.onmouseup=function(){
+                document.onmousemove=null;
+                document.onmousedown=null
+            }
+        }
+        upper3.onmousedown=function(e){
+            var ol=e.clientX-upper3.offsetLeft;
+            var ot=e.clientY-upper3.offsetTop;
+            document.onmousemove=function(e){
+                var left=e.clientX-ol;
+                var top=e.clientY-ot;
+                upper3.style.left=left+"px";
+                upper3.style.top=top+"px";
+            }
+            document.onmouseup=function(){
+                document.onmousemove=null;
+                document.onmousedown=null
+            }
+        }
+        pants1.onmousedown=function(e){
+            var ol=e.clientX-pants1.offsetLeft;
+            var ot=e.clientY-pants1.offsetTop;
+            document.onmousemove=function(e){
+                var left=e.clientX-ol;
+                var top=e.clientY-ot;
+                pants1.style.left=left+"px";
+                pants1.style.top=top+"px";
+            }
+            document.onmouseup=function(){
+                document.onmousemove=null;
+                document.onmousedown=null;
+            }
+        }
+        pants2.onmousedown=function(e){
+            var ol=e.clientX-pants2.offsetLeft;
+            var ot=e.clientY-pants2.offsetTop;
+            document.onmousemove=function(e){
+                var left=e.clientX-ol;
+                var top=e.clientY-ot;
+                pants2.style.left=left+"px";
+                pants2.style.top=top+"px";
+            }
+            document.onmouseup=function(){
+                document.onmousemove=null;
+                document.onmousedown=null;
+            }
+        }
+        pants3.onmousedown=function(e){
+            var ol=e.clientX-pants3.offsetLeft;
+            var ot=e.clientY-pants3.offsetTop;
+            document.onmousemove=function(e){
+                var left=e.clientX-ol;
+                var top=e.clientY-ot;
+                pants3.style.left=left+"px";
+                pants3.style.top=top+"px";
+            }
+            document.onmouseup=function(){
+                document.onmousemove=null;
+                document.onmousedown=null;
+            }
+        }
+        shoes1.onmousedown=function(e){
+            var ol=e.clientX-shoes1.offsetLeft;
+            var ot=e.clientY-shoes1.offsetTop;
+            document.onmousemove=function(e){
+                var left=e.clientX-ol;
+                var top=e.clientY-ot;
+                shoes1.style.left=left+"px";
+                shoes1.style.top=top+"px";
+            }
+            document.onmouseup=function(){
+                document.onmousemove=null;
+                document.onmousedown=null;
+            }
+        }
+        shoes2.onmousedown=function(e){
+            var ol=e.clientX-shoes2.offsetLeft;
+            var ot=e.clientY-shoes2.offsetTop;
+            document.onmousemove=function(e){
+                var left=e.clientX-ol;
+                var top=e.clientY-ot;
+                shoes2.style.left=left+"px";
+                shoes2.style.top=top+"px";
+            }
+            document.onmouseup=function(){
+                document.onmousemove=null;
+                document.onmousedown=null;
+            }
+        }
+        shoes3.onmousedown=function(e){
+            var ol=e.clientX-shoes3.offsetLeft;
+            var ot=e.clientY-shoes3.offsetTop;
+            document.onmousemove=function(e){
+                var left=e.clientX-ol;
+                var top=e.clientY-ot;
+                shoes3.style.left=left+"px";
+                shoes3.style.top=top+"px";
+            }
+            document.onmouseup=function(){
+                document.onmousemove=null;
+                document.onmousedown=null;
+            }
+        }
+       
+        function screenshot(){
+        html2canvas(document.getElementById('chart3')).then(function(canvas) {
+            document.body.appendChild(canvas);
+            var a = document.createElement('a');
+            a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+            a.download = 'image.jpg';
+            a.click();
+        });
+    }
+        
+         
+       
+
+
+    </script>
+</body>
+</html>

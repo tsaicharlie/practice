@@ -1,0 +1,25 @@
+@charset "UTF-8";
+body {
+  background: #ff5b5b;
+  text-align: center;
+}
+body p {
+  font-size: 40px;
+  font-style: italic;
+  font-weight: bolder;
+}
+body p span {
+  color: #ffffff;
+  font-size: 30px;
+}
+body div {
+  width: 200px;
+  height: 200px;
+  background-image: url(/img/飛天小女警.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: #fff;
+  margin: 0 auto;
+  border-radius: 40px;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //調用函數時瀏覽器會自動傳兩個參數
+        //1 this
+        //2 arguments
+            //arguments是類似陣列的物件，可以通過索引來操作數據，也可以獲取長度
+
+            function fun(){
+                console.log(arguments);
+                console.log(arguments.length);
+            }
+            fun("hello",true,20,5);
+    </script>
+</body>
+</html>

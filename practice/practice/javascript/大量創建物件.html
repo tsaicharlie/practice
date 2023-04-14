@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function createObject(name,age,gender){
+            var obj={
+                name:name,
+                age:age,
+                gender:gender,
+                getValue:function(){
+                   console.log(this);
+                
+                    }
+                }
+                return obj;
+            }
+           
+        
+    
+        var obj2=createObject("大壯",20,"男");
+        var obj3=createObject("小帥",18,"男");
+        var obj4=createObject("小美",25,"女");
+    //     function printObj(this){
+    //     for(n in obj){
+    //         console.log("屬性名: "+n);
+    //         console.log("屬性值: "+obj[n]);
+    //     }
+    // }
+        // printObj(obj2);
+        // printObj(obj3);
+        // printObj(obj4);
+        obj2.getValue();
+        obj3.getValue();
+        obj4.getValue();
+        console.log(typeof obj2);
+        console.log(obj2==obj3);
+        console.log(obj2 instanceof createObject);
+
+
+
+
+
+    </script>
+</body>
+</html>

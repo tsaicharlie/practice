@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //使用建構函數不須return obj
+
+        //以函數形式調用時 this永遠是window
+
+        //以方法形式調用時 this就是調用方法的物件
+
+        //以構造函數形式調用時 this就是新建的物件
+
+        //使用call和apply調用時 this是指定的對象
+        function Person(name , age , gender){
+            this.name=name;
+            this.age=age;
+            this.gender=gender;
+            this.getValue=function(){
+                console.log(this);
+            }
+        }
+
+        var per=new Person("小帥",20,"男");
+        var per2=new Person("大壯",22,"男");
+        var per3=new Person("小美",18,"女");
+        per.getValue();
+        per2.getValue();
+        per3.getValue();
+
+        function Dog(name, age ,gender){
+            this.name=name;
+            this.age=age;
+            this.gender=gender;
+            this.getValue=function(){
+                console.log(this);
+            }
+        }
+            var dog=new Dog("來福",3,"公");
+            var dog2=new Dog("戀次",16,"公");
+            var dog3=new Dog("小黑",5,"母");
+            dog.getValue();
+            dog2.getValue();
+            dog3.getValue();
+            console.log("per是Person的物件嗎? "+(per instanceof Person));
+            console.log("dog是Dog的物件嗎? "+(dog instanceof Dog));
+            console.log("per是Dog的物件嗎? "+(per instanceof Dog));
+            console.log(typeof per2);
+            console.log(typeof Person);
+
+            
+        
+        
+    </script>
+</body>
+</html>

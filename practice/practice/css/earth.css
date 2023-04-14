@@ -1,0 +1,229 @@
+body {
+  overflow: hidden;
+}
+
+#universe {
+  height: 100vh;
+  background: radial-gradient(#888, #000);
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotatey(60deg) rotateX(45deg);
+}
+#universe .stars {
+  background-image: url(/img/stars.png);
+  height: 100%;
+  background-size: cover;
+  animation: starFlash 2s infinite alternate;
+}
+#universe .sun {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(yellow, orange);
+  border-radius: 50%;
+  box-shadow: 0px 0px 45px 5px rgb(223, 153, 25);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -100px;
+  margin-top: -100px;
+  animation: sunshine 2s infinite alternate;
+}
+#universe .earthOrbit {
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -250px;
+  margin-top: -250px;
+  animation: earthOrbit 10s infinite linear;
+}
+#universe .earthOrbit img {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  margin-top: -75px;
+  margin-left: -75px;
+  left: 50%;
+  animation: spin 10s infinite;
+}
+#universe .moonOrbit {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin-left: -100px;
+  margin-top: -100px;
+  animation: spin 5s infinite linear;
+}
+#universe .moonOrbit .moon {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(#ddd, #888);
+  border-radius: 50%;
+  animation: earth 10s;
+}
+#universe .water {
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -90px;
+  margin-top: -90px;
+  border: 1px solid rgb(243, 243, 243);
+  border-radius: 50%;
+  animation: spin 8s infinite linear;
+}
+#universe .water img {
+  width: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  animation: spin 6s infinite linear;
+}
+#universe .fire {
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -300px;
+  margin-top: -300px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  animation: spin 15s infinite linear;
+}
+#universe .fire img {
+  width: 150px;
+  position: absolute;
+  left: 0;
+  margin-top: -75px;
+  margin-left: -75px;
+  animation: spin 10s infinite linear;
+}
+#universe .wood {
+  width: 700px;
+  height: 700px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -350px;
+  margin-top: -350px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  animation: spin 8s infinite linear;
+}
+#universe .wood img {
+  width: 180px;
+  left: 0;
+  margin-top: -100px;
+  margin-left: -100px;
+  animation: spin 20s infinite linear;
+}
+#universe .terra {
+  width: 850px;
+  height: 850px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -425px;
+  margin-top: -425px;
+  border: 1px solid rgb(255, 253, 253);
+  border-radius: 50%;
+  animation: spin 20s infinite linear;
+}
+#universe .terra img {
+  width: 300px;
+  margin-top: -50px;
+  margin-left: -50px;
+  animation: spin 30s infinite linear;
+}
+#universe .haiwang {
+  width: 1100px;
+  height: 1100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -550px;
+  margin-top: -550px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  animation: spin 30s infinite linear;
+}
+#universe .haiwang img {
+  width: 300px;
+  left: 0;
+  margin-top: 100px;
+  animation: spin 20s infinite linear;
+}
+#universe .gold {
+  width: 1000px;
+  height: 1000px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -500px;
+  margin-top: -500px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  animation: spin 30s infinite linear;
+}
+#universe .gold img {
+  width: 200px;
+  margin-top: -50px;
+  margin-left: -50px;
+  animation: spin 10s infinite linear;
+}
+#universe .kazu {
+  perspective: 200px;
+  position: absolute;
+  width: 200PX;
+  height: 200px;
+  left: 100%;
+  top: 0;
+  right: 0;
+  transform-style: flat;
+  transform: translatex(600px) rotateX(-30deg);
+  scale: 1;
+}
+#universe .kazu img {
+  border-radius: 50px;
+  width: 400px;
+  height: 400px;
+}
+
+@keyframes starFlash {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+@keyframes sunshine {
+  0% {
+    box-shadow: 0px 0px 45px 5px rgb(223, 153, 25);
+  }
+  100% {
+    box-shadow: 0px 0px 90px rgb(223, 153, 25);
+  }
+}
+@keyframes earthOrbit {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+@keyframes spin {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cubic{
+            width:200px;
+            height: 200px;
+            /* background-color: #bfa; */
+            margin: 0 auto;
+            perspective: 800px;
+            transform: rotateX(45deg)rotateZ(45deg);
+            transform-style: preserve-3d;
+            animation: run 5s infinite alternate;
+            margin-top: 40%;
+            /* overflow: hidden; */
+        }
+        
+        body{
+            /* perspective: 8000px; */
+            /* background-color: orange; */
+        }
+       
+       .cubic>div{
+           
+            
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            opacity: 0.7;
+            /* animation: run 3s infinite; */
+            transform-style: preserve-3d;
+        }
+        
+        img{
+            vertical-align: top;
+        }
+        .patrick{
+            transform: rotateY(90deg) translateZ(100px);
+            /* perspective: 900px; */
+            background-color: red;
+        }
+        .bosspi{
+            transform: rotateY(-90deg) translateZ(100px);
+            background-color:blue;
+        }
+        .tako{
+            transform:rotateX(-90deg)translateZ(100px);
+            background-color: yellow;
+        }
+        .sandy{
+            transform: rotateX(90deg) translateZ(100px);
+            background-color:green;
+        }
+        .krab{
+            transform: rotateY(180deg) translateZ(100px) ;
+            background-color: purple;
+
+        }
+        .spongebob{
+            transform: rotateY(0deg)translatez(100px) ;
+            background-color: rgb(161, 201, 231);
+        }
+
+
+        
+        @keyframes run{
+            from{
+                transform: rotateY(0) translateZ(0);
+            }
+            to{
+                transform: rotatex(180deg) rotateZ(180deg) ;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cubic">
+         <div class="patrick"><img  src="/img/spongebob/49559949267_3da049d7ab_b.jpg"></img></div> 
+        <div class="bosspi"><img  src="/img/spongebob/下載 (1).png" alt=""></div>
+        <div class="tako"><img  src="/img/spongebob/下載 (2).jpg" alt="">
+        </div>  
+       <div class="sandy"><img  src="/img/spongebob/下載.jpg" alt=""></div>
+        <div class="krab"><img  src="/img/spongebob/下載.png" alt=""></div>
+        <div class="spongebob"><img  src="/img/spongebob/下載 (1).jpg" alt=""></div>
+        
+
+    </div>
+
+</body>
+</html>

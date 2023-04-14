@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Animated Paper Airplane</title>
+    <style>
+        #plane {
+            fill: #0088cc;
+            stroke: #005580;
+            stroke-width: 2px;
+            animation: fly 5s linear infinite;
+        }
+
+        @keyframes fly {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            25% {
+                transform: translate(50%, -20%) rotate(45deg);
+            }
+
+            50% {
+                transform: translate(75%, 50%) rotate(90deg);
+            }
+
+            75% {
+                transform: translate(-50%, 100%) rotate(135deg);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(180deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <svg width="400" height="400">
+        <path id="plane" d="M5.5,0 L50,0 L30,40 L5.5,0 L5.5,0 Z" />
+    </svg>
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(158, 169, 228);
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper{
+            display: flex;
+            justify-content:space-evenly;
+            /* flex-wrap: wrap; */
+            
+        }
+        .empty{
+            width: 350px;
+            height: 350px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+            filter: grayscale(1);
+            transition: all .2s;
+            margin-top: 50px;
+            
+        }
+        .fill{
+            width: 150px;
+            height:150px;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+            margin-top: 30px;
+            margin-left: 20px;
+            transition: all .1s;
+            border: 2px solid;
+            
+        }
+        .botwrapper{
+            background-color: azure;
+            position: fixed;
+            width: 100vw;
+            height: 30vh;
+            bottom: 0;
+            display: flex;
+        }
+        .hold{
+            border: 5px red solid;
+        }
+        .hovered {
+            background-color: #333;
+            outline-color: white;
+            outline-style: dashed;
+        }
+        .animate{
+            animation: animate .5s infinite ;
+        }
+        @keyframes animate {
+            0%{
+    
+            }
+            100%{
+                outline: 5px solid red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="empty" style="background-image: url(./img/3shots.jpg);"></div>
+        <div class="empty" style="background-image: url(./img/douhua.png);"></div>  
+        <div class="empty" style="background-image: url(./img/8ganono.png);"></div>
+        <div class="empty" style="background-image: url(./img/穿山甲.jpg);"></div>    
+        <div class="empty" style="background-image: url(./img/外賣.jpg);"></div> 
+        <div class="empty" style="background-image: url(./img/火鍋.jpg);"></div>   
+    </div>
+
+    </div >
+    <div class="botwrapper">
+        <div class="fill" draggable="true" style="background-image: url(./img/音符.jpeg);"></div>
+        <div class="fill" draggable="true" style="background-image: url(./img/音符.jpeg);"></div>
+        <div class="fill" draggable="true" style="background-image: url(./img/音符.jpeg);"></div>
+        <div class="fill" draggable="true" style="background-image: url(./img/音符.jpeg);"></div>
+        <div class="fill" draggable="true" style="background-image: url(./img/音符.jpeg);"></div>
+        <div class="fill" draggable="true" style="background-image: url(./img/音符.jpeg);"></div>
+        
+    </div>
+
+    <audio loop src="./audio/台湾山羌叫声.台湾山羌音效.台湾山羌声音 3min.mp3"></audio>
+    <audio loop src="./audio/我ㄉ豆花 30塊.mp3" ></audio>
+    <audio loop src="./audio/巴嘎NONO.mp3"></audio>
+    <audio loop src="./audio/欸幹穿山甲欸[備份].mp3"></audio>
+    <audio loop src="./audio/咖喱拌饭.mp3"></audio>
+    <audio loop src="./audio/【統神端火鍋】高畫質修復 Chia-Hangs Falling (HD Remastered Video).mp3"></audio>
+    
+
+
+
+    <script>
+        var fill=document.querySelectorAll('.fill');
+        var empties=document.querySelectorAll(".empty");
+        var audio=document.getElementsByTagName("audio");
+        var botwrapper=document.querySelector(".botwrapper");
+
+        
+        
+        for(var i=0 ;i<fill.length;i++){
+            empties[i].addEventListener('dragover' , dragOver)
+            empties[i].addEventListener('dragenter' , dragEnter)
+            empties[i].addEventListener('dragleave' , dragLeave)
+            fill[i].addEventListener('dragstart',dragStart);
+            fill[i].addEventListener('dragend',dragEnd);
+            
+            botwrapper.addEventListener('dragover' , dragOver)
+            botwrapper.addEventListener('dragenter' , dragEnter2)
+            botwrapper.addEventListener('dragleave' , dragLeave2)
+            botwrapper.addEventListener('drop' , dragDropback)
+        }
+        empties[0].addEventListener('drop' , dragDrop);
+        empties[1].addEventListener('drop' , dragDrop2);
+        empties[2].addEventListener('drop' , dragDrop3);
+        empties[3].addEventListener('drop' , dragDrop4);
+        empties[4].addEventListener('drop' , dragDrop5);
+        empties[5].addEventListener('drop' , dragDrop6);
+        function dragStart (){
+            this.className+=' hold';
+        }
+        function dragEnd (){
+            this.className=" fill";  
+        }
+        function dragOver(e) {
+        // 停止瀏覽器預設行為：拒絕透過拖曳來執行submit
+            e.preventDefault();
+        }
+        function dragEnter(e) {
+        // 停止瀏覽器預設行為：拒絕透過拖曳來執行submit
+            e.preventDefault();
+            this.style.filter='grayscale(0)';
+        // 當拖曳圖片滑過任一個<div>時，加上hovered選擇器
+            this.className += ' hovered';
+        }
+        function dragLeave() {
+        // 當拖曳圖片滑過並離開任一個<div>時，將該<div>的class指定為empty。
+            this.className = 'empty';
+            this.style.filter='grayscale(1)';
+        }
+        function dragDrop() {
+        // 清空hovered選擇器
+            this.className = 'empty';
+        // 拖曳到<div>後放掉，即是dragDrop行為，
+        // 此時在<div>當中加入child dom，也就是div.full  
+            
+            this.append(fill[0]); 
+            audio[0].load();
+            audio[0].play();
+            this.style.filter='grayscale(0)';
+            this.className+=" animate";
+        }
+        function dragEnter2(){
+            e.preventDefault();
+        }
+        function dragLeave2() {   
+
+        }
+        function dragDropback(e) {
+            
+            for(var i=0;i<fill.length;i++){
+                this.append(fill[i]); 
+                audio[i].pause();
+            }
+
+        }
+        function dragDrop2() {
+            this.append(fill[1]); 
+            audio[1].load();
+            audio[1].play();
+            this.className+=" animate";
+        }
+        function dragDrop3() {
+            this.append(fill[2]); 
+            audio[2].load();
+            audio[2].play();
+            this.className+=" animate";
+        }
+        function dragDrop4() {
+            this.append(fill[3]); 
+            audio[3].load();
+            audio[3].play();
+            this.className+=" animate";
+        }
+        function dragDrop5() {
+            this.append(fill[4]); 
+            audio[4].load();
+            audio[4].play();
+            this.className+=" animate";
+        }
+        function dragDrop6() {
+            this.append(fill[5]); 
+            audio[5].load();
+            audio[5].play();
+            this.className+=" animate";
+        }
+
+    </script>
+</body>
+</html>

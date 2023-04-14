@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+    <style>
+        .box{
+            height: 220px;
+            border-radius: 20px;
+        }
+        .img{
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+       
+        .text{
+            font-family: 微軟正黑體;
+            font-weight: 900;
+            font-size: 26px;
+            
+        }
+        .wrapper{
+            position: relative;
+        }
+        .wrapper::before{
+            content: "";
+            position: absolute;
+            width: 4px;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(red, orange, yellow, yellowgreen, lightblue, blue, purple);
+        }
+        .point{
+            position: relative;
+        }
+        .point::before{
+            position: absolute;
+            content: '';
+            width: 20px;
+            height: 20px;
+            background-color: #ffffff;
+            border:2px solid #555;
+            border-radius: 50%;
+            top: 50%;
+            bottom: 0;
+            transition:all 0.5s;
+        }
+        .row:hover.point:before{
+            scale: 1.1;
+            border: 2px red solid;
+        }
+        @media screen and (max-width:768px) {
+            .point::before{
+                display: none;
+            }
+            .wrapper::before{
+                
+                display: none; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper my-4">
+        <div class="container">
+            <div class="row mt-4 d-flex justify-content-center align-items-center point">
+                <div class="col-md-6">
+                    <div class="text  ">1999 雙葉幼稚園向日葵小班畢業</div>
+    
+                </div>
+                <div class="col-md-6">
+                    <div class="img box" style="background-image: url(./img/時間軸/雙葉.jpg);"></div>
+                </div>
+                
+                
+            </div>
+            <div class="row mt-4 d-flex justify-content-center align-items-center point flex-row-reverse">
+                <div class="col-md-6">
+                    <div class="text  ">
+                        2003 木葉忍者學校中忍畢業
+                        </div>
+    
+                </div>
+                <div class="col-md-6">
+                    <div class="img box" style="background-image: url(./img/時間軸/木葉.jpg);"></div>
+                </div>
+                
+                
+            </div>
+            <div class="row mt-4 d-flex justify-content-center align-items-center point ">
+                <div class="col-md-6">
+                    <div class="text  ">2005 東京都立咒術高等專門學校畢業</div>
+    
+                </div>
+                <div class="col-md-6">
+                    <div class="img box" style="background-image: url(./img/時間軸/咒術.jpg);"></div>
+                </div>
+                
+                
+            </div>
+            <div class="row mt-4 d-flex justify-content-center align-items-center point flex-row-reverse">
+                <div class="col-md-6">
+                    <div class="text  ">2010 公安對魔特異4課就職</div>
+    
+                </div>
+                <div class="col-md-6">
+                    <div class="img box" style="background-image: url(./img/時間軸/公安.png);"></div>
+                </div>
+                
+                
+            </div>
+            
+                
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</body>
+</html>

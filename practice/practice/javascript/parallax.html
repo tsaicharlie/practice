@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height:100vh;
+            overflow-x:hidden
+        }
+        .wrapper{
+            width: 100vw;
+            position: relative;
+            text-align: center;
+            /* left: 0; */
+            /* top: 0; */
+        }
+        .wrapper span{
+            font-size: 280px;
+            margin-top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bolder;
+            position: absolute;
+            color: rgb(234, 231, 231);
+            text-shadow: 2px 2px 10px rgba(130, 127, 127, 0.5);
+            z-index: 2;
+            
+        }
+        .wrapper img{
+            position: absolute;
+            width: 100%;
+            left:0;
+            top:0;
+            
+        }
+        .wrapper header{
+            display: flex;
+            justify-content:start;
+        }
+        .wrapper header div{
+            font-size: 36px;
+            margin-left: 20px;
+            color: gray;
+            border-radius: 10px;
+            z-index: 1;
+            padding: 10px;
+            margin-top: 20px;
+            
+        }
+        .wrapper header div:nth-child(1){
+            color: white;
+            background-color: #3c8371;
+            margin-left: 100px;
+        }
+        .wrapper header div:hover{
+            color: white;
+            background-color: #3c8371;
+            
+        }
+        .text{
+            display: flex;
+            position: relative;
+            width: 100vw;
+            flex-wrap: wrap;
+            height: 100vw;
+            top:1100px;
+            background-color: #0c3329;
+            padding: 20px;
+
+        }
+        p{
+            color: rgb(255, 255, 255);
+            /* position: absolute; */
+            font-size: 40px;font-weight: bolder;
+
+        }
+    </style>
+</head>
+
+<body>
+    
+    <section class="wrapper">
+        <header>
+            <div>Home</div>
+            <div>About</div>
+            <div>Service</div>
+        </header>
+        <span>welcome</span>
+        <img id="hill1" src="../img/Parallax Scrolling Website - 01/hill1.png" alt="">
+        <img id="hill2" src="../img/Parallax Scrolling Website - 01/hill2.png" alt="">
+        <img id="hill3" src="../img/Parallax Scrolling Website - 01/hill3.png" alt="">
+        <img id="hill4" src="../img/Parallax Scrolling Website - 01/hill4.png" alt="">
+        <img id="hill5" src="../img/Parallax Scrolling Website - 01/hill5.png" alt="">
+        <img id="leaf" src="../img/Parallax Scrolling Website - 01/leaf.png" alt="">
+        <img id="plant" src="../img/Parallax Scrolling Website - 01/plant.png" alt="">
+        <img id="tree" src="../img/Parallax Scrolling Website - 01/tree.png" alt="">
+
+    </section>
+    <section class="text">
+        <h2 style="font-size: 100px; color: white;">parallax website</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit necessitatibus impedit magnam molestias vitae maiores nulla consequuntur voluptate aspernatur modi! Quia alias excepturi quis reprehenderit ea commodi accusamus odio fugiat?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit necessitatibus impedit magnam molestias vitae maiores nulla consequuntur voluptate aspernatur modi! Quia alias excepturi quis reprehenderit ea commodi accusamus odio fugiat?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit necessitatibus impedit magnam molestias vitae maiores nulla consequuntur voluptate aspernatur modi! Quia alias excepturi quis reprehenderit ea commodi accusamus odio fugiat?</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit necessitatibus impedit magnam molestias vitae maiores nulla consequuntur voluptate aspernatur modi! Quia alias excepturi quis reprehenderit ea commodi accusamus odio fugiat?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit necessitatibus impedit magnam molestias vitae maiores nulla consequuntur voluptate aspernatur modi! Quia alias excepturi quis reprehenderit ea commodi accusamus odio fugiat?<br><br></p>
+    </section>
+
+
+    
+    <script>
+        function opacity(x,value){
+                x.style.opacity=1-(value*0.0015)
+            }
+        var hill1=document.getElementById("hill1");
+        var leaf=document.getElementById("leaf");
+        var span=document.getElementsByTagName("span")[0];
+        var plant=document.getElementById("plant")
+        var tree=document.getElementById("tree")
+        
+        leaf.onclick=function(){
+            alert("123")
+        }
+        window.addEventListener("scroll",function(){
+            console.log(value);
+            var value=window.scrollY;
+            console.log(value);
+            leaf.style.left=value*2.5+"px";
+            opacity(leaf,value)
+            opacity(hill1,value)
+            opacity(hill2,value)
+            opacity(hill3,value)
+            opacity(hill4,value)
+            opacity(hill5,value)
+            opacity(tree,value)
+            // opacity(plant,value)
+            leaf.style.top=value*-2.5+"px";
+            span.style.top=value*2.5+"px";
+            hill5.style.left=value*1.5+"px";
+            hill4.style.left=value*-1.5+"px";
+            hill1.style.top=value*2+"px";
+            hill2.style.left=value*-1.5+"px";
+            hill3.style.left=value*1.5+"px";
+
+
+            
+
+            
+
+
+
+        })
+
+    </script>
+</body>
+
+</html>

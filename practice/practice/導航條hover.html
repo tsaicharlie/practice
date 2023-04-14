@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            width: 100vw;
+            background-color: antiquewhite;
+            /* display: inline-block; */
+           
+        }
+        li{
+            width: 15%;
+            display: inline-block;
+            border: 1px solid;
+            text-align: center;
+            position: relative;
+            border-radius: 10px;
+            background-color: rgba(123, 228, 123, 0.8);
+           
+        }
+        a{
+            display: block;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+        div{
+            /* display: block; */
+            width: 300px;
+            height: 0px;
+            overflow: hidden;
+            position: absolute;
+            background-color: rgba(221, 131, 196, 0.583);
+            /* display: none; */
+            z-index: 1;
+            /* visibility: hidden; */
+            /* opacity: 0;         */
+            transition: all 2s;    
+        }
+        /* li:hover{
+            background-color: #e2803e;
+        } */
+
+        li a:hover{
+            background-color: #e2803e;
+        }
+
+        li:hover div {
+            /* opacity: 1; */
+            height: 400px;
+            /* overflow:visible; */
+            /* display: block; */
+            /* background-color:red ; */
+            /* visibility: visible; */
+            /* opacity: 1; */
+            /* background-color: rgba(255, 0, 0, 0.6); */
+            
+        }
+        
+       
+       
+        
+        p{
+
+            width: 30%;
+            height:30vw;
+            background-color: aqua;
+           
+            border: 10px solid red;
+            margin-left: 100px;
+            rotate: 45deg;
+            overflow: hidden;
+            margin-top:50px ;
+            margin-left: 150px;
+            box-sizing: border-box;
+            
+        }
+        span{
+            display: block;
+            width: 100%;
+            border: 1px solid;
+            box-sizing: border-box;
+            padding: 10px;
+            background-color: rgba(123, 209, 228, 0.5);
+        }
+        span:hover{
+            background-color:rgba(104, 189, 104, 0.8); ;
+        }
+        span:hover~li{
+            background-color: red;
+        }
+        
+        img{
+            
+            width: 200px;
+            rotate:-45deg;
+            scale: 150%;
+        }
+        
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="">1</a>
+            <div>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+            </div>
+        </li>
+        
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+        <li><a href="">6</a></li>
+    </ul>
+    <!-- <p><img src="/img/1287cb0c5cbf2b665b9684eef1e903a5.png" alt=""></p> -->
+</body>
+</html>

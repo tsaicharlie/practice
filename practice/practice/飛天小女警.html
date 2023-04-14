@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --mycolor01:#d40000;
+            --mycolor02:#ce6e73;
+            --mycolor03:#d69eb0;
+            --mycolor04:#ce0001;
+            
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #797373;
+            
+        }
+        .wrapper{
+            height: 100vh;
+             display: flex; 
+            justify-content: center;
+            align-items: center; 
+            /* background-color: red; */
+
+        }
+       .wrapper .box{
+            width:400px;
+            height: 400px;
+           background: linear-gradient();
+           position: relative;
+           /* display: flex; */
+           /* justify-content: center; */
+            background-color: aquamarine;
+            background: radial-gradient(var(--mycolor01)0%,
+             var(--mycolor01)25%,
+             var(--mycolor02)25%,
+             var(--mycolor02)50%,
+             var(--mycolor03)50%,
+             var(--mycolor03)75%,
+             var(--mycolor04)75%,
+             var(--mycolor04)100%);
+             filter: grayscale(1);
+             animation: animate 0.4s infinite;
+             animation-play-state: paused;
+            text-align: center;
+            border-radius: 20px;
+            /* transition: all 2s; */
+           /* -webkit-box-reflect: below 1px linear-gradient(transparent); */
+           
+
+        }
+        .box:hover {
+            animation-play-state: running;
+            filter: grayscale(0);
+
+        }
+        .box:hover img{
+            scale: 150%;
+            filter: grayscale(0);
+            /* filter: saturate(1); */
+            
+        }
+        img{
+            margin-left: -10px;
+            margin-top: 100px;
+            /* object-fit: ; */
+            transition: all 1s;
+            /* display: block; */
+            filter: grayscale(1);
+            
+            
+            
+        }
+        @keyframes animate {
+            0%{
+                background: radial-gradient(
+             var(--mycolor01)0%,
+             var(--mycolor01)25%,
+             var(--mycolor02)25%,
+             var(--mycolor02)50%,
+             var(--mycolor03)50%,
+             var(--mycolor03)75%,
+             var(--mycolor04)75%,
+             var(--mycolor04)100%);
+            }
+            25%{
+                background: radial-gradient(
+             var(--mycolor04)0%,
+             var(--mycolor04)25%,
+             var(--mycolor01)25%,
+             var(--mycolor01)50%,
+             var(--mycolor02)50%,
+             var(--mycolor02)75%,
+             var(--mycolor03)75%,
+             var(--mycolor03)100%);
+            }
+            50%{
+                background: radial-gradient(var(--mycolor03)0%,
+             var(--mycolor03)25%,
+             var(--mycolor04)25%,
+             var(--mycolor04)50%,
+             var(--mycolor01)50%,
+             var(--mycolor01)75%,
+             var(--mycolor02)75%,
+             var(--mycolor02)100%);
+            }
+            75%{
+                background: radial-gradient(var(--mycolor02)0%,
+             var(--mycolor02)25%,
+             var(--mycolor03)25%,
+             var(--mycolor03)50%,
+             var(--mycolor04)50%,
+             var(--mycolor04)75%,
+             var(--mycolor01)75%,
+             var(--mycolor01)100%);
+            }
+            100%{
+                background: radial-gradient(
+             var(--mycolor04)0%,
+             var(--mycolor04)25%,
+             var(--mycolor03)25%,
+             var(--mycolor03)50%,
+             var(--mycolor02)50%,
+             var(--mycolor02)75%,
+             var(--mycolor01)75%,
+             var(--mycolor01)100%);
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box"><img src="./img/飛天小女警.jpg.png" alt=""></div>
+        
+    </div>
+</body>
+</html>

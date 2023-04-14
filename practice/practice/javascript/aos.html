@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *:before,
+        *:after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        /* For IE 6/7 (trigger hasLayout) */
+        .clearfix {
+            *zoom: 1;
+            color:rgb(189, 79, 189);
+        }
+
+        html,
+        body,
+        div,
+        span,
+        p,
+        a {
+            font-family: open_sansregular, sans-serif;
+            font-size: 100%;
+            font-style: normal;
+            text-transform: none;
+            text-decoration: none;
+            text-align: left;
+            letter-spacing: normal;
+            word-spacing: normal;
+            line-height: 1.4;
+            outline: none;
+            vertical-align: baseline;
+        }
+
+        html body {
+            background-color: #ecf0f1;
+        }
+
+        .container {
+            overflow: hidden;
+            padding-bottom: 400px;
+        }
+
+        .vline {
+            position: absolute;
+            width: 4px;
+            background: #34495e;
+            top: 85px;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .header {
+            padding: 20px 50px;
+            background-color: #bdc3c7;
+        }
+
+        .header h1 {
+            color: #fff;
+            text-align: center;
+            font-size: 32px;
+        }
+
+        .row {
+            width: 100%;
+            clear: both;
+            float: left;
+            position: relative;
+        }
+
+        .left {
+            width: 50%;
+            float: left;
+            position: relative;
+            padding-right: 2%;
+        }
+
+        .right {
+            width: 50%;
+            float: right;
+            position: relative;
+            padding-left: 2%;
+        }
+
+        .wrap {
+            width: 70%;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .wrap-title {
+            padding: 15px;
+        }
+
+        .wrap-title h2 {
+            color: #fff;
+        }
+
+        .wrap-par {
+            background-color: #fff;
+            padding: 15px;
+        }
+
+        .wrap-par p {
+            color: #777576;
+        }
+
+        .wrap-photo {
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .right .wrap-photo {
+            margin-left: 15%;
+            float: left;
+        }
+
+        .left .wrap-photo {
+            margin-right: 20%;
+            float: right;
+        }
+
+        .wrap-photo a {
+            display: block;
+        }
+
+        .wrap-photo img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .date {
+            position: absolute;
+            background-color: #2c3e50;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px;
+            border-radius: 50%;
+            opacity: 0;
+        }
+
+        .date-text {
+            color: #fff;
+            text-align: center;
+        }
+
+        /* ---- Small ---*/
+        .row.small {
+            padding: 20px 0;
+        }
+
+        .small .wrap-title {
+            background-color: #c0392b;
+        }
+
+        .small .wrap-photo {
+            width: 150px;
+            height: 150px;
+        }
+
+        .small .right .wrap-photo {
+            margin: 5px 0;
+            margin-left: 15%;
+        }
+
+        /* ---- Medium ---*/
+        .row.medium {
+            padding: 30px 0;
+        }
+
+        .medium .wrap-title {
+            background-color: #27ae60;
+        }
+
+        .medium .wrap-photo {
+            width: 200px;
+            height: 200px;
+        }
+
+        .medium .left .wrap-photo {
+            margin: 14px 0;
+            margin-right: 30%;
+        }
+
+        /* ---- Large ---*/
+        .row.large {
+            padding: 40px 0;
+        }
+
+        .large .wrap-title {
+            background-color: #f1c40f;
+        }
+
+        .large .wrap-photo {
+            width: 300px;
+            height: 300px;
+        }
+
+        .large .right .wrap-photo {
+            margin: 9px 0;
+            margin-left: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container clearfix">
+        <header class="header">
+            <h1>CSS Time Line</h1>
+        </header>
+        <div class="vline"></div>
+        <div class="row small">
+            <div class="sm-text left">
+                <div class="wrap">
+                    <div class="wrap-title">
+                        <h2>Small Title</h2>
+                    </div>
+                    <div class="wrap-par">
+                        <p>Do greatest at in learning steepest. Breakfast extremity suffering one who all otherwise
+                            suspected. He at no nothing forbade up moments.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sm-photo right">
+                <div class="wrap-photo"><a href="#"><img
+                            src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png"></a></div>
+            </div>
+            <div class="date">
+                <div class="date-text">sm date</div>
+            </div>
+        </div>
+        <div class="row medium">
+            <div class="med-text right">
+                <div class="wrap">
+                    <div class="wrap-title">
+                        <h2>Medium Title</h2>
+                    </div>
+                    <div class="wrap-par">
+                        <p>Do greatest at in learning steepest. Breakfast extremity suffering one who all otherwise
+                            suspected. He at no nothing forbade up moments. Wholly uneasy at missed be of pretty whence.
+                            John way sir high than law who week. Surrounded prosperous introduced it if is up
+                            dispatched. Improved so strictly produced answered elegance is.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="med-photo left">
+                <div class="wrap-photo"><a href="#"><img
+                            src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png"></a></div>
+            </div>
+            <div class="date">
+                <div class="date-text">md date</div>
+            </div>
+        </div>
+        <div class="row large">
+            <div class="lg-text left">
+                <div class="wrap">
+                    <div class="wrap-title">
+                        <h2>Large Title</h2>
+                    </div>
+                    <div class="wrap-par">
+                        <p>Game of as rest time eyes with of this it. Add was music merry any truth since going.
+                            Happiness she ham but instantly put departure propriety. She amiable all without say spirits
+                            shy clothes morning. Frankness in extensive to belonging improving so certainty. Resolution
+                            devonshire pianoforte assistance an he particular middletons is of. Explain ten man uncivil
+                            engaged conduct. Am likewise betrayed as declared absolute do. Taste oh spoke about no solid
+                            of hills up shade. Occasion so bachelor humoured striking by attended doubtful be it. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg-photo right">
+                <div class="wrap-photo"><a href="#"><img
+                            src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png"></a></div>
+            </div>
+            <div class="date">
+                <div class="date-text">lg date</div>
+            </div>
+        </div>
+        <div class="row small">
+            <div class="sm-text left">
+                <div class="wrap">
+                    <div class="wrap-title">
+                        <h2>Small Title</h2>
+                    </div>
+                    <div class="wrap-par">
+                        <p>Do greatest at in learning steepest. Breakfast extremity suffering one who all otherwise
+                            suspected. He at no nothing forbade up moments.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sm-photo right">
+                <div class="wrap-photo"><a href="#"><img
+                            src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png"></a></div>
+            </div>
+            <div class="date">
+                <div class="date-text">sm date</div>
+            </div>
+        </div>
+        <div class="row medium">
+            <div class="med-text right">
+                <div class="wrap">
+                    <div class="wrap-title">
+                        <h2>Medium Title</h2>
+                    </div>
+                    <div class="wrap-par">
+                        <p>Do greatest at in learning steepest. Breakfast extremity suffering one who all otherwise
+                            suspected. He at no nothing forbade up moments. Wholly uneasy at missed be of pretty whence.
+                            John way sir high than law who week. Surrounded prosperous introduced it if is up
+                            dispatched. Improved so strictly produced answered elegance is.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="med-photo left">
+                <div class="wrap-photo"><a href="#"><img
+                            src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png"></a></div>
+            </div>
+            <div class="date">
+                <div class="date-text">md date</div>
+            </div>
+        </div>
+        <div class="row large">
+            <div class="lg-text left">
+                <div class="wrap">
+                    <div class="wrap-title">
+                        <h2>Large Title</h2>
+                    </div>
+                    <div class="wrap-par">
+                        <p>Game of as rest time eyes with of this it. Add was music merry any truth since going.
+                            Happiness she ham but instantly put departure propriety. She amiable all without say spirits
+                            shy clothes morning. Frankness in extensive to belonging improving so certainty. Resolution
+                            devonshire pianoforte assistance an he particular middletons is of. Explain ten man uncivil
+                            engaged conduct. Am likewise betrayed as declared absolute do. Taste oh spoke about no solid
+                            of hills up shade. Occasion so bachelor humoured striking by attended doubtful be it. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg-photo right">
+                <div class="wrap-photo"><a href="#"><img
+                            src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png"></a></div>
+            </div>
+            <div class="date">
+                <div class="date-text">lg date</div>
+            </div>
+        </div>
+        <div class="row small">
+            <div class="sm-text left">
+                <div class="wrap">
+                    <div class="wrap-title">
+                        <h2>Small Title</h2>
+                    </div>
+                    <div class="wrap-par">
+                        <p>Do greatest at in learning steepest. Breakfast extremity suffering one who all otherwise
+                            suspected. He at no nothing forbade up moments.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sm-photo right">
+                <div class="wrap-photo"><a href="#"><img
+                            src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png"></a></div>
+            </div>
+            <div class="date">
+                <div class="date-text">sm date</div>
+            </div>
+        </div>
+        <div class="row medium">
+            <div class="med-text right">
+                <div class="wrap">
+                    <div class="wrap-title">
+                        <h2>Medium Title</h2>
+                    </div>
+                    <div class="wrap-par">
+                        <p>Do greatest at in learning steepest. Breakfast extremity suffering one who all otherwise
+                            suspected. He at no nothing forbade up moments. Wholly uneasy at missed be of pretty whence.
+                            John way sir high than law who week. Surrounded prosperous introduced it if is up
+                            dispatched. Improved so strictly produced answered elegance is.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="med-photo left">
+                <div class="wrap-photo"><a href="#"><img
+                            src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png"></a></div>
+            </div>
+            <div class="date">
+                <div class="date-text">md date</div>
+            </div>
+        </div>
+        <div class="row large">
+            <div class="lg-text left">
+                <div class="wrap">
+                    <div class="wrap-title">
+                        <h2>Large Title</h2>
+                    </div>
+                    <div class="wrap-par">
+                        <p>Game of as rest time eyes with of this it. Add was music merry any truth since going.
+                            Happiness she ham but instantly put departure propriety. She amiable all without say spirits
+                            shy clothes morning. Frankness in extensive to belonging improving so certainty. Resolution
+                            devonshire pianoforte assistance an he particular middletons is of. Explain ten man uncivil
+                            engaged conduct. Am likewise betrayed as declared absolute do. Taste oh spoke about no solid
+                            of hills up shade. Occasion so bachelor humoured striking by attended doubtful be it. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg-photo right">
+                <div class="wrap-photo"><a href="#"><img
+                            src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png"></a></div>
+            </div>
+            <div class="date">
+                <div class="date-text">lg date</div>
+            </div>
+        </div>
+        <div class="row small">
+            <div class="sm-text left">
+                <div class="wrap">
+                    <div class="wrap-title">
+                        <h2>Small Title</h2>
+                    </div>
+                    <div class="wrap-par">
+                        <p>Do greatest at in learning steepest. Breakfast extremity suffering one who all otherwise
+                            suspected. He at no nothing forbade up moments.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="sm-photo right">
+                <div class="wrap-photo"><a href="#"><img
+                            src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png"></a></div>
+            </div>
+            <div class="date">
+                <div class="date-text">sm date</div>
+            </div>
+        </div>
+        <div class="row medium">
+            <div class="med-text right">
+                <div class="wrap">
+                    <div class="wrap-title">
+                        <h2>Medium Title</h2>
+                    </div>
+                    <div class="wrap-par">
+                        <p>Do greatest at in learning steepest. Breakfast extremity suffering one who all otherwise
+                            suspected. He at no nothing forbade up moments. Wholly uneasy at missed be of pretty whence.
+                            John way sir high than law who week. Surrounded prosperous introduced it if is up
+                            dispatched. Improved so strictly produced answered elegance is.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="med-photo left">
+                <div class="wrap-photo"><a href="#"><img
+                            src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png"></a></div>
+            </div>
+            <div class="date">
+                <div class="date-text">md date</div>
+            </div>
+        </div>
+        <div class="row large">
+            <div class="lg-text left">
+                <div class="wrap">
+                    <div class="wrap-title">
+                        <h2>Large Title</h2>
+                    </div>
+                    <div class="wrap-par">
+                        <p>Game of as rest time eyes with of this it. Add was music merry any truth since going.
+                            Happiness she ham but instantly put departure propriety. She amiable all without say spirits
+                            shy clothes morning. Frankness in extensive to belonging improving so certainty. Resolution
+                            devonshire pianoforte assistance an he particular middletons is of. Explain ten man uncivil
+                            engaged conduct. Am likewise betrayed as declared absolute do. Taste oh spoke about no solid
+                            of hills up shade. Occasion so bachelor humoured striking by attended doubtful be it. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg-photo right">
+                <div class="wrap-photo"><a href="#"><img
+                            src="http://thesocialmediamonthly.com/wp-content/uploads/2015/08/photo.png"></a></div>
+            </div>
+            <div class="date">
+                <div class="date-text">lg date</div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="../bs js/jquery-3.6.4.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            var $win = $(window);
+            var $rows = $('.row');
+            var $line = $('.vline');
+            var op = 0;
+
+            $win.on('scroll', function () {
+                var top = $(this).scrollTop();
+                $line.height(top + 400);
+
+                $rows.each(function () {
+
+                    if (top > $(this).offset().top - $win.height()) {
+                        var offset = Math.min(0, top - $(this).offset().top + $win.height() - 400);
+
+                        $(this).find('.left').css({ transform: 'translate( ' + offset + 'px, 0px)' });
+                        $(this).find('.right').css({ transform: 'translate( ' + Math.abs(offset) + 'px, 0px)' });
+
+                        var off = $(this).offset().top;
+                        var height = 350; //$(this).height();
+                        off = off + height;
+
+                        op = Math.min(1, (top - off + 1100) / 800);
+
+                        $(this).find('.date').css({ opacity: (op) });
+                    }
+                });
+            });
+            $(window).trigger('scroll');
+        });
+    </script>
+</body>
+
+</html>

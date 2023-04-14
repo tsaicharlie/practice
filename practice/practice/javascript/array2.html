@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr=[["小帥",20],["大壯",16],["小美",25],["佛伯樂",15]];
+        console.log(arr);
+        function newArray(arr){
+            var newArr=[];
+            for(var i=0;i<arr.length;i++){   
+                if(arr[i][1]>=18){
+                    newArr.push(arr[i]);
+                }
+                
+            }
+            return newArr;
+        }
+        // 內建forEach方法提供陣列遍歷的功能
+        // 需要一個函數作為參數
+        // 瀏覽器會在函數中傳入3個參數
+        // 1 當前遍歷的元素
+        // 2 當前遍歷的index
+        // 3 當前遍歷的陣列
+        var newArr=newArray(arr);
+        console.log(newArr);
+        newArr.forEach(function(a,b,c){console.log(c);})
+
+        // slice(start,end)可以從陣列提取指定範圍的元素，該方法不會影響原陣列，而是將元素提取後返回值
+        // 參數end不包含自己 e.g. slice(0,3)--> 回傳值0,1,2
+        //參數可傳負值 e.g.
+        //-1 -->倒數第一個 -2 -->倒數第二個
+
+        var slice=arr.slice(0,2);
+        console.log("slice後的新陣列  "+slice);
+        //splice(start,number,element)可以從陣列刪除指定範圍的元素，並新增元素，該方法"會"影響原陣列
+        //第一個參數表示開始位置
+        //第二個參數表示數量
+        //第三個參數新增的元素
+
+        arr.splice(0,1,["志明",22],["春嬌",30]);
+        console.log("splice後的原陣列 "+arr);
+        console.log(arr[0]);
+        console.log(arr[1]);
+        console.log(arr[2]);
+        console.log(arr[3]);
+        console.log(arr[4]);
+        console.log(arr[5]);
+        //concat()可以連接兩個或多個陣列，並將新的陣列返回，該方法不會對原陣列產生影響
+        var result=arr.concat(newArr);
+        console.log("concat後的陣列 "+result);
+        //join()可以將數組轉換為一個字串
+        //reverse()可以將陣列反轉，該方法會改變原陣列
+        result.reverse();
+        console.log("reverse後的陣列 "+result);
+        //sort()可以將陣列排序，該方法會改變原陣列，默認照unicode編碼排序
+        //我們可以在sort方法中添加函數，瀏覽器會根據函數的回傳值決定元素的順序
+        // 返回>0的值，則元素交換位置
+        // 返回<0的值，則元素位置不變
+        // 返回=0的值，則認為兩個元素相等，元素位置不變 
+        newArr.sort(function(a,b){
+            if(a>b){
+                return 1;
+
+            }
+            else if(a<b){
+                return -1;
+            }
+            else{
+                return 0;
+            }
+        })
+        console.log("sort後的陣列 "+newArr);
+
+    </script>
+</body>
+</html>

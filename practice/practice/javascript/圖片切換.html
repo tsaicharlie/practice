@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/a20a61d504.js" crossorigin="anonymous"></script>
+    <style>
+        #wrap{
+            width: 80vw;
+            margin: 0 auto;
+            margin-top: 50px;
+            position: relative;
+        }
+        img{
+            width: 100%;
+            
+        }
+        button{
+            
+            background-color: transparent;
+            border: none;
+        }
+        button i{
+            font-size: 50px;
+            transition: all 0.5s;
+            /* animation: animate 2s infinite alternate linear; */
+            color: white;
+        }
+        button:hover i{
+            color: #888;
+            scale: 1.1;
+        }
+        button:nth-child(2){
+            position: absolute;
+            left: 0;
+            top: 50%;
+        }
+        button:nth-child(3){
+            position: absolute;
+            right: 0;
+            top: 50%;
+        }
+        button:nth-child(4){
+            position: absolute;
+            right: 45%;
+            top: 0;
+            transform: rotateY(180deg);
+        }
+        button:nth-child(5){
+            position: absolute;
+            right:0;
+            top: 0px;
+            filter: grayscale();
+        }
+        button:nth-child(6){
+            position: absolute;
+            left: 0;
+            top: 0px;
+            filter: none;
+            
+        }
+        @keyframes animate{
+            0%{
+                color: black;
+            }
+            50%{
+                color: gray;
+            }
+            100%{
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <img src="/img/wallpaper/HD wallpaper_ Adventure Time, tree house, nature, mountains.jpg" alt="">
+        <button id="left"><i class="fa-solid fa-arrow-left"></i></button>
+        <button id="right"><i class="fa-solid fa-arrow-right"></i></button>
+        <button id="y-reverse"><i class="fa-solid fa-arrow-rotate-right"></i></button>
+        <button id="dark"><i class="fa-solid fa-circle-half-stroke"></i></button>
+        <button id="reverse"><i class="fa-solid fa-poo"></i></button>
+
+    </div>
+    
+    
+   <script>
+    var left=document.getElementById("left");
+    var right=document.getElementById("right")
+    var img=document.getElementsByTagName("img")[0];
+    var y_reverse=document.getElementById("y-reverse");
+    var dark=document.getElementById("dark");
+    var reverse=document.getElementById("reverse");
+
+    var imgArr=["/img/wallpaper/HD wallpaper_ Adventure Time, tree house, nature, mountains.jpg","/img/wallpaper/2560x1440px _ free download _ HD wallpaper_ Howl's Moving Castle, Studio Ghibli, fantasy art, clouds, daylight.jpg","/img/wallpaper/mob.png","/img/wallpaper/Rare Gallery wallpaper.jpg","/img/wallpaper/Rick and Morty PC Wallpaper [1920×1080].png","/img/wallpaper/Jojo Manga Wallpapers - Wallpaper Cave.png"];
+    var index=0;
+    var count=0;
+    left.onclick=function(){
+        index--;
+        if(index<0){
+            index=imgArr.length-1;
+        }
+        img.src=imgArr[index];
+       
+        
+    }
+    right.onclick=function(){
+        index++;
+        if(index>=imgArr.length){
+            index=0;
+        }
+        img.src=imgArr[index];
+        
+    }
+    y_reverse.onclick=function(){
+        count+=1;
+        if(count%2==1){
+            img.style.transform=' rotateY(180deg)';
+        }
+        else{
+            img.style.transform=' rotateY(360deg)';
+        }
+        
+    }
+    dark.onclick=function(){
+        count=count+1;
+        console.log(count);
+       
+        if(count%2==1)
+        {
+            img.style.filter="grayscale()";
+        }
+        else{
+            img.style.filter="none";
+        }
+        
+    }
+    reverse.onclick=function(){
+        // img.style.filter='hue-rotate(90deg)';
+        count+=1;
+        if(count%2==1){
+            img.style.filter='hue-rotate(90deg)';
+        }
+        else{
+            img.style.filter='hue-rotate(0deg)';
+        }
+    }
+    
+</script>
+    
+    
+</body>
+</html>

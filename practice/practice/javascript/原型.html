@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function MyClass(name,age){
+        this.name=name;
+        this.age=age;
+        this.getValue=this.fun;
+    }
+    MyClass.prototype.fun=function(){
+        console.log(this);
+    }
+    
+
+    var mc =new MyClass("cc",20);
+    var mc2=new MyClass("aa",10);
+    var mc3=new MyClass("bb",30);
+    mc2.fun=function(){
+        console.log("我是mc2裡的function");
+    }
+    console.log(MyClass);
+    console.log(MyClass.prototype);
+    console.log("MyClass的prototype是否等於物件mc的prototype "+(MyClass.prototype==mc.__proto__));
+    MyClass.prototype.a=123;
+    console.log(mc.a);
+    console.log(mc.prototype);
+    mc.fun();
+    mc2.fun();
+    mc3.fun();
+
+</script>
+<body>
+    
+</body>
+</html>

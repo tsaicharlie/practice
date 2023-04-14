@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            position: absolute;
+            /* transition: all .5s; */
+        }
+    </style>
+</head>
+<body>
+    <img src="../img/-_-.png" alt="">
+
+    <script>
+        var img=document.getElementsByTagName("img")[0];
+        var counter=0;
+        
+            document.onkeydown=function(e){
+                counter+=1;
+
+                
+            if(e.keyCode==87){
+                img.style.top=img.offsetTop - 20 +"px";
+                img.src="../img/-_-back.png";
+                
+                
+            }
+            if(e.keyCode==83){
+                img.style.top=img.offsetTop + 20 + "px";
+                img.src="../img/-_-.png";
+                if(counter%2==0){
+                    img.src="../img/-_-walking1.png";
+                }
+                else{
+                    img.src="../img/-_-walking2.png";
+                }
+                
+            }
+            if(e.keyCode==68){
+                img.style.left=img.offsetLeft+ 20 +"px";
+                img.src="../img/-_-right.png";
+                if(counter%2==0){
+                    img.src="../img/-_-sidewalking2.png";
+                }
+                else{
+                    img.src="../img/-_-right.png";
+                }
+                
+               
+            }
+            if(e.keyCode==65){
+                img.style.left=img.offsetLeft- 20 +"px";
+
+                img.src="../img/-_-left.png";
+                if(counter%2==0){
+                    img.src="../img/-_-sidewalking.png";
+                }
+                else{
+                    img.src="../img/-_-left.png";
+                }
+               
+            }
+            if(e.shiftKey){
+                img.src="../img/sans.png";
+                if(counter%2==0){
+                    img.src="../img/sans.png";
+                }
+                else{
+                    img.src="../img/-_-.png";
+                }
+            }
+            if(e.ctrlKey){
+                img.src="../img/sans2.png";
+                if(counter%2==0){
+                    img.src="../img/sans2.png";
+                }
+                else{
+                    img.src="../img/sans.png";
+                }
+            }
+                
+            
+            console.log(e.keyCode);
+                
+            
+        }
+        
+    </script>
+</body>
+</html>
