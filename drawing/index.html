@@ -33,6 +33,7 @@
         <label id="label" for="range"></label>
         <button id="clear"><i class="fa-solid fa-trash-can"></i></button>
         <button id="save"><i class="fa-solid fa-light fa-arrow-down"></i></button>
+        <button id="rotate"><i class="fa-solid fa-rotate"></i>(測試中)</button>
     </div>
 
 </body>
@@ -50,6 +51,7 @@
     let nav = document.getElementById("nav")
     let save = document.getElementById("save")
     let rainbow = document.getElementById('rainbow')
+    let rotate=document.getElementById('rotate')
     let rainbowflag = false
     let linewidth = 5
     let draw = false
@@ -202,6 +204,20 @@
     rainbow.onclick = function () {
         rainbowflag = true;
     }
+    //旋轉
+    let rotateflag=false
+    rotate.addEventListener('click',function(){
+        
+        if(rotateflag==false){
+            canvas.classList.add("spin")
+            rotateflag=true
+
+        }else{
+            canvas.classList.remove("spin")
+            rotateflag=false
+        }
+        
+    })
 
 
 
