@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="drag">
+        <div id="spin">
+            <img src="./img/01.jpg">
+            <img src="./img/c9ed5398a30349288c6c93f2ab644de6.jpeg">
+            <img src="./img/dog.jpg">
+            <img src="./img/巨神兵.jpg">
+            <img src="./img/成之內.png">
+            <img src="./img/黑魔導女孩.jpg">
+            <img src="./img/640.png">
+        </div>
+        <div id="ground"></div>
+    </div>
+
+
+
+    <script>
+        var radius = 400;
+        var autorotate = true;
+        var rotateSpeed = -60;
+        var imgWidth = 190;
+        var imgHeight = 230;
+
+        setTimeout(init, 1000);
+
+        var odrag = document.getElementById("drag")
+        var ospin = document.getElementById("spin")
+        var oimg = document.getElementsByTagName("img")
+
+        function init() {
+
+            for (var i = 0; i < oimg.length; i++) {
+                oimg[i].style.transform = "rotateY(" + (i * (360 / oimg.length)) + "deg) translateZ(" + radius + "px)";
+                oimg[i].style.transition = "transform 1s";
+                oimg[i].style.transitionDelay = (oimg.length - i) / 4 + "s";
+            }
+
+        }
+        function applyTransform(obj) {
+            // console.log(tY)
+            // if (tY > 180) {
+            //     tY = 180
+            // }
+            // if (tY < 0) {
+            //     tY = 0;
+            // }
+            obj.style.transform = "rotateX(" + (-tY) + "deg) rotateY(" + (tX) + "deg)";
+        }
+        function playSpin(yes) {
+            ospin.style.animationPlayState = (yes ? "running" : "paused")
+        }
+        var sX, sY, nX, nY, desX, desY, tX = 0
+        var tY = 10;
+        if (autorotate) {
+            var animationName = (rotateSpeed > 0 ? "spin" : "spinRevert");
+            ospin.style.animation = +animationName + (Math.abs(rotateSpeed)) + "s infinte linear";
+
+        }
+        document.onmousedown = function (e) {
+            
+            clearInterval(odrag.timer)
+            var sX = e.clientX
+            var sY = e.clientY
+            this.onmousemove = function (e) {
+                var nX = e.clientX
+                var nY = e.clientY
+                desX = nX - sX
+                desY = nY - sY
+                tX += desX * 0.1
+                tY += desY * 0.1
+
+                applyTransform(odrag);
+                sX = nX
+                sY = nY
+
+                // console.log("\nsX:"+sX+"\nsY:"+sY+"\nnX:"+nX+"\nnY:"+nY+"\ndesX:"+desX+"\ndesY:"+desY+"\ntX:"+tX+"\ntY:"+tY)
+            }
+            this.onmouseup = function (e) {
+                odrag.timer = setInterval(function () {
+                    desX *= 0.95;
+                    desY *= 0.95;
+                    tX += desX * 0.1;
+                    tY += desY * 0.1;
+                    console.log(desX)
+                    applyTransform(odrag);
+                    playSpin(false);
+                    if (Math.abs(desX) < 0.5 && Math.abs(desY) < 0.5) {
+                        clearInterval(odrag.timer);
+                        playSpin(true)
+                    }
+                }, 17)
+                this.onmousemove = this.onmouseup = null;
+            }
+
+            return false;
+        }
+
+    </script>
+</body>
+
+</html>

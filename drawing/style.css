@@ -10,8 +10,8 @@ body{
 canvas{
 border: 1px solid;
 box-sizing: border-box;
-animation: spin infinite linear 5s;
-border-radius: 50%;
+/* animation: spin infinite linear 5s; */
+/* border-radius: 50%; */
 
 }
 .demo{

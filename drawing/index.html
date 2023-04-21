@@ -93,41 +93,42 @@
     })
     //畫畫
     cns[0].addEventListener("mousedown", function (e) { 
-        timer=setInterval(function(){
-            draw = true 
-        if (prevX == null || prevY == null || !draw) {
-            prevX = e.offsetX
-            prevY = e.offsetY
-            return
-        }
+        draw = true 
+        // timer=setInterval(function(){
+            
+        // if (prevX == null || prevY == null || !draw) {
+        //     prevX = e.offsetX
+        //     prevY = e.offsetY
+        //     return
+        // }
 
-        let currentX = e.offsetX
-        let currentY = e.offsetY
+        // let currentX = e.offsetX
+        // let currentY = e.offsetY
 
-        ctx.beginPath()
-        // ctx2.beginPath()
-        // ctx3.beginPath()
-        // ctx4.beginPath()
+        // ctx.beginPath()
+        // // ctx2.beginPath()
+        // // ctx3.beginPath()
+        // // ctx4.beginPath()
 
 
-        ctx.moveTo(prevX, prevY)
-        // ctx2.moveTo(prevX,prevY)
-        // ctx3.moveTo(prevX,prevY)
-        // ctx4.moveTo(prevX,prevY)
-        ctx.lineTo(currentX, currentY)
-        // ctx2.lineTo(currentX,currentY)
-        // ctx3.lineTo(currentX,currentY)
-        // ctx4.lineTo(currentX,currentY)
-        ctx.stroke()
-        // ctx2.stroke()
-        // ctx3.stroke()
-        // ctx4.stroke()
-        prevX = currentX
-        prevY = currentY
-        if (rainbowflag == true) {
-            rainbowfn()
-        }
-        },10)
+        // ctx.moveTo(prevX, prevY)
+        // // ctx2.moveTo(prevX,prevY)
+        // // ctx3.moveTo(prevX,prevY)
+        // // ctx4.moveTo(prevX,prevY)
+        // ctx.lineTo(currentX, currentY)
+        // // ctx2.lineTo(currentX,currentY)
+        // // ctx3.lineTo(currentX,currentY)
+        // // ctx4.lineTo(currentX,currentY)
+        // ctx.stroke()
+        // // ctx2.stroke()
+        // // ctx3.stroke()
+        // // ctx4.stroke()
+        // prevX = currentX
+        // prevY = currentY
+        // if (rainbowflag == true) {
+        //     rainbowfn()
+        // }
+        // },10)
         
         
     })
