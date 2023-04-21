@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a20a61d504.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    
+        <canvas id="canvas"></canvas>
+        
+    
+
+
+    <div id="nav" class="nav">
+        <div data-clr="rgb(255, 0, 0)" class="list"></div>
+        <div data-clr="rgb(247, 155, 17)" class="list"></div>
+        <div data-clr="rgb(232, 228, 8)" class="list"></div>
+        <div data-clr="rgb(68, 255, 0)" class="list"></div>
+        <div data-clr="rgb(0, 183, 255)" class="list"></div>
+        <div data-clr="rgb(0, 98, 255)" class="list"></div>
+        <div data-clr="rgb(247, 0, 255)" class="list"></div>
+        <div data-clr="rgb(255, 255, 255)" class="list"></div>
+        <div id="rainbow"></div>
+        <input id="bgcolor" type="color">
+        <input type="range" min="1" max="20" id="range" value="5">
+        <label id="label" for="range"></label>
+        <button id="clear"><i class="fa-solid fa-trash-can"></i></button>
+        <button id="save"><i class="fa-solid fa-light fa-arrow-down"></i></button>
+    </div>
+
+</body>
+
+<script>
+    let canvas = document.getElementById("canvas")
+    // let canvas2=document.getElementById("canvas2")
+    // let canvas3=document.getElementById("canvas3")
+    // let canvas4=document.getElementById("canvas4")
+    let body = document.querySelector("body")
+    let colorlists = document.querySelectorAll(".list")
+    let range = document.getElementById('range')
+    let lable = document.getElementById("label")
+    let clear = document.getElementById("clear")
+    let nav = document.getElementById("nav")
+    let save = document.getElementById("save")
+    let rainbow = document.getElementById('rainbow')
+    let rainbowflag = false
+    let linewidth = 5
+    let draw = false
+    let bgcolor = document.getElementById("bgcolor")
+    let cns=document.getElementsByTagName("canvas")
+    let ctx = canvas.getContext("2d")
+    // let ctx2 = canvas2.getContext("2d")
+    // let ctx3 = canvas3.getContext("2d")
+    // let ctx4 = canvas4.getContext("2d")
+    let prevX = null
+    let prevY = null
+    let timer
+    canvas.width = window.innerWidth 
+    canvas.height = window.innerWidth
+    // canvas2.width = window.innerWidth / 2
+    // canvas2.height = window.innerHeight / 2
+    // canvas3.width = window.innerWidth / 2
+    // canvas3.height = window.innerHeight / 2
+    // canvas4.width = window.innerWidth / 2
+    // canvas4.height = window.innerHeight / 2
+    ctx.lineWidth = linewidth
+
+    lable.innerHTML = range.value
+
+    //彩虹
+    let hue = 0; // 色相環度數從 0 開始 
+
+    function rainbowfn() {
+        // 透過 context 的 strokeStyle 設定筆畫顏色
+        ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+
+        hue += 5; // 色相環 度數更新
+        if (hue >= 360) {
+            hue = 0;
+        }
+    }
+    //背景顏色
+    bgcolor.addEventListener("input", function () {
+        let bgcolorinput = this.value;
+        body.style.backgroundColor = bgcolorinput
+    })
+    //畫畫
+    cns[0].addEventListener("mousedown", function (e) { 
+        timer=setInterval(function(){
+            draw = true 
+        if (prevX == null || prevY == null || !draw) {
+            prevX = e.offsetX
+            prevY = e.offsetY
+            return
+        }
+
+        let currentX = e.offsetX
+        let currentY = e.offsetY
+
+        ctx.beginPath()
+        // ctx2.beginPath()
+        // ctx3.beginPath()
+        // ctx4.beginPath()
+
+
+        ctx.moveTo(prevX, prevY)
+        // ctx2.moveTo(prevX,prevY)
+        // ctx3.moveTo(prevX,prevY)
+        // ctx4.moveTo(prevX,prevY)
+        ctx.lineTo(currentX, currentY)
+        // ctx2.lineTo(currentX,currentY)
+        // ctx3.lineTo(currentX,currentY)
+        // ctx4.lineTo(currentX,currentY)
+        ctx.stroke()
+        // ctx2.stroke()
+        // ctx3.stroke()
+        // ctx4.stroke()
+        prevX = currentX
+        prevY = currentY
+        if (rainbowflag == true) {
+            rainbowfn()
+        }
+        },10)
+        
+        
+    })
+    cns[0].addEventListener("mouseup", function () { draw = false 
+    clearInterval(timer)})
+    cns[0].addEventListener("mousemove", function (e) {
+        if (prevX == null || prevY == null || !draw) {
+            prevX = e.offsetX
+            prevY = e.offsetY
+            return
+        }
+
+        let currentX = e.offsetX
+        let currentY = e.offsetY
+
+        ctx.beginPath()
+        // ctx2.beginPath()
+        // ctx3.beginPath()
+        // ctx4.beginPath()
+
+
+        ctx.moveTo(prevX, prevY)
+        // ctx2.moveTo(prevX,prevY)
+        // ctx3.moveTo(prevX,prevY)
+        // ctx4.moveTo(prevX,prevY)
+        ctx.lineTo(currentX, currentY)
+        // ctx2.lineTo(currentX,currentY)
+        // ctx3.lineTo(currentX,currentY)
+        // ctx4.lineTo(currentX,currentY)
+        ctx.stroke()
+        // ctx2.stroke()
+        // ctx3.stroke()
+        // ctx4.stroke()
+        prevX = currentX
+        prevY = currentY
+        if (rainbowflag == true) {
+            rainbowfn()
+        }
+
+    })
+    //畫筆顏色
+    colorlists.forEach(list => {
+        list.addEventListener('click', function () {
+            ctx.strokeStyle = list.dataset.clr
+            draw = false
+            rainbowflag = false
+        })
+    });
+    //畫筆粗細
+    range.addEventListener("input", function () {
+        linewidth = this.value
+        ctx.lineWidth = linewidth
+        lable.innerHTML = this.value
+        draw = false
+    })
+    //清空
+    clear.addEventListener("click", function () {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+    })
+    //儲存
+    save.addEventListener("click", function () {
+        let data = canvas.toDataURL("img/png")
+        let a = document.createElement("a")
+        a.href = data
+        a.download = "sketch.png"
+        a.click()
+    })
+    nav.onmouseenter = function () {
+        draw = false
+    }
+    rainbow.onclick = function () {
+        rainbowflag = true;
+    }
+
+
+
+
+
+
+
+</script>
+
+</html>
