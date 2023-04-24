@@ -84,7 +84,10 @@
 
     function rainbowfn() {
         // 透過 context 的 strokeStyle 設定筆畫顏色
-        ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+        ctx0.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+        ctx1.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+        ctx2.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+        ctx3.strokeStyle = `hsl(${hue}, 100%, 50%)`;
 
         hue += 5; // 色相環 度數更新
         if (hue >= 360) {
