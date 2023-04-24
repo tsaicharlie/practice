@@ -45,14 +45,14 @@
 		
 		// 將完整履歷放到下層  canvas2
 		var imgs = new Image();
-		imgs.src = '/img/rock.jpeg';
+		imgs.src = '../img/rock.jpeg';
 		imgs.onload = function(){
 			ctx2.drawImage(this,0,0)
 		}
 		
 		// 需要刮的履歷放在上層  canvas1
 		var img2 = new Image();
-		img2.src = '/img/裡多會.jpg';
+		img2.src = '../img/裡多會.jpg';
         img2.style.height='1000px';
 		img2.onload = function(){
 			ctx1.drawImage(this,0,0)
