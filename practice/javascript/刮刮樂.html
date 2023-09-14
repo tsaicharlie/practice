@@ -63,6 +63,7 @@
 		
 		c1.ontouchstart= function(ev){
 		c1.ontouchmove = function(e){
+			e.preventDefault(); 
 			console.log(e);
 			var w = 80;			// 清除筆刷的寬度
 			var h = 80;			// 清除筆刷的高度
