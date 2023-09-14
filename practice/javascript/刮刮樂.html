@@ -61,9 +61,8 @@
 			ctx1.drawImage(this,0,0)
 		}
 		
-		c1.ontouchstart= function(ev){
-		c1.ontouchmove = function(e){
-			e.preventDefault(); 
+		c1.onmousedown = function(ev){
+		c1.onmousemove = function(e){
 			console.log(e);
 			var w = 80;			// 清除筆刷的寬度
 			var h = 80;			// 清除筆刷的高度
@@ -72,9 +71,9 @@
 			ctx1.clearRect(x,y,w,h);
 		}
 		}
-		c1.ontouchend = function(ev){
+		c1.onmouseup = function(ev){
 		// 取消onmousemove事件
-		c1.ontouchmove = null;
+		c1.onmousemove = null;
 		}
 
 
